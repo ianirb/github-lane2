@@ -1,0 +1,191 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: "Montserrat", system-ui, sans-serif;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+/* Add custom styles */
+.text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-300 to-violet-600;
+}
+
+.glass-card {
+  @apply bg-gray-900/90 backdrop-blur-lg border border-gray-800/50 hover:border-violet-500/30 
+         transition-all duration-500 hover:shadow-lg hover:shadow-violet-500/20 
+         transform hover:-translate-y-1;
+}
+
+.luxury-gradient {
+  @apply bg-gradient-to-r from-violet-900 via-violet-800 to-violet-900;
+}
+
+.button-luxury {
+  @apply bg-gradient-to-r from-violet-500 to-violet-600 hover:from-violet-600 hover:to-violet-700 
+         transition-all duration-300 shadow-lg hover:shadow-violet-500/50 
+         transform hover:-translate-y-0.5;
+}
+
+.input-luxury {
+  @apply bg-gray-900/50 border-gray-700/50 focus:border-violet-400/50 focus:ring-violet-400/20 
+         backdrop-blur-sm transition-all duration-300;
+}
+
+/* Luxury typography styles */
+.brand-name {
+  @apply font-display tracking-widest text-lg uppercase;
+}
+
+.heading-xl {
+  @apply font-display text-5xl md:text-7xl font-bold leading-tight;
+}
+
+.heading-lg {
+  @apply font-display text-4xl md:text-5xl font-bold;
+}
+
+.heading-md {
+  @apply font-display text-2xl md:text-3xl font-semibold;
+}
+
+.body-text {
+  @apply font-sans text-base leading-relaxed;
+}
+
+.caption-text {
+  @apply font-sans text-sm tracking-wider uppercase;
+}
+
+/* Animation classes */
+.hover-glow {
+  @apply hover:shadow-lg hover:shadow-violet-500/40 transition-all duration-500 
+         transform hover:-translate-y-1;
+}
+
+.hover-scale {
+  @apply hover:scale-105 transition-all duration-500 hover:shadow-lg 
+         hover:shadow-violet-500/20;
+}
+
+.hover-border {
+  @apply hover:border-violet-500/50 transition-all duration-500 
+         hover:shadow-lg hover:shadow-violet-500/20;
+}
+
+.animate-gradient {
+  background: linear-gradient(
+    270deg,
+    theme('colors.violet.400'),
+    theme('colors.violet.600'),
+    theme('colors.violet.800'),
+    theme('colors.violet.600')
+  );
+  background-size: 400% 400%;
+  animation: gradient 6s ease infinite;
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: .8;
+    transform: scale(0.98);
+  }
+}
+
+/* Service card animations */
+.service-card {
+  @apply bg-gray-900 p-10 rounded-2xl hover:shadow-xl hover:shadow-violet-500/20 
+         transform transition-all duration-500 hover:-translate-y-2 
+         border border-transparent hover:border-violet-500/30;
+}
+
+/* Icon animations */
+.animate-icon {
+  @apply transition-all duration-300 transform hover:scale-125 hover:text-violet-400 
+         hover:rotate-6;
+}
+
+/* Button animations */
+.button-glow {
+  @apply relative overflow-hidden;
+}
+
+.button-glow::after {
+  @apply absolute inset-0 rounded-lg opacity-0 transition-opacity duration-500
+         bg-gradient-to-r from-violet-400/0 via-violet-400/50 to-violet-400/0;
+  content: '';
+}
+
+.button-glow:hover::after {
+  @apply opacity-100;
+  animation: glow 1.2s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Nav link animations */
+.nav-link {
+  @apply relative overflow-hidden;
+}
+
+.nav-link::after {
+  @apply absolute bottom-0 left-0 h-0.5 w-0 bg-violet-400 
+         transition-all duration-300 ease-out;
+  content: '';
+  transform-origin: left;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-500 hover:shadow-lg hover:shadow-violet-500/20 
+         transform hover:-translate-y-2 hover:bg-gray-800;
+}
+
+/* Text hover effects */
+.hover-text {
+  @apply transition-all duration-300 hover:text-violet-400;
+}
+
+/* Gradient text animation */
+.animate-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-violet-600;
+  background-size: 200% 200%;
+  animation: gradient-text 4s ease infinite;
+}
+
+@keyframes gradient-text {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
