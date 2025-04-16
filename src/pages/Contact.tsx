@@ -39,15 +39,17 @@ export function Contact() {
       <section className="py-20 bg-gray-800">
         <div className="container mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            {/* Typeform */}
+            {/* Airtable Form */}
             <div className="glass-card p-10 rounded-2xl">
               <h2 className="text-2xl font-bold mb-8">Submit Your Inquiry</h2>
-              <div className="aspect-[3/4] w-full">
-                <iframe
-                  src="https://form.typeform.com/to/QvHDx4uW"
-                  className="w-full h-full rounded-lg"
+              <div className="w-full">
+                <iframe 
+                  className="airtable-embed rounded-lg"
+                  src="https://airtable.com/embed/appKpuo1dPnNhw7Fp/paguFOvx4YveuoBvT/form"
                   frameBorder="0"
-                  allow="camera; microphone; autoplay; encrypted-media;"
+                  width="100%"
+                  height="700"
+                  style={{ background: 'transparent', border: '1px solid #374151' }}
                 ></iframe>
               </div>
             </div>
